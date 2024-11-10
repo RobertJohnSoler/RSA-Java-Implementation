@@ -1,15 +1,20 @@
+package Proof_of_concepts;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.Scanner;
 
-public class KeyGen {
 	/**
-	1. Choose two primes p and q.
-	2. Compute n = p*q
-	3. Compute phi(n) = (p-1)(q-1)
-	4. Select the public exponent e element of {1, 2, 3, …, phi(n)-1} such that gcd (e, phi(n))) = 1.
-	5. Compute private key d such that d*e = 1 mod phi(n).
+    This code generates a public and private key pair using the RSA algorithm and Fermat's Primality test. 
+    Refer to PrimeCheck.java and PrimeGen.java for more details on checking and generating prime numbers.
+    The RSA algorithm is as follows:
+        1. Choose two primes p and q.
+        2. Compute n = p*q
+        3. Compute phi(n) = (p-1)(q-1)
+        4. Select the public exponent e element of {1, 2, 3, …, phi(n)-1} such that gcd (e, phi(n)) = 1.
+        5. Compute private key d such that d*e = 1 mod phi(n).
 	**/
+
+public class KeyGen {
 	
 	public static void main (String[] args) {
 		Scanner input = new Scanner (System.in);

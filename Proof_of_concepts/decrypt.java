@@ -1,5 +1,11 @@
+package Proof_of_concepts;
 import java.math.BigInteger;
 import java.util.Scanner;
+
+
+/* This code is a simple proof-of-concept code that decrypts a given ciphertext using the RSA algorithm.
+ * Since this is still a proof-of-concept, the code only outputs integer plaintexts. It cannot output strings yet.
+ */
 
 public class decrypt {
 	public static void main (String [] args) {

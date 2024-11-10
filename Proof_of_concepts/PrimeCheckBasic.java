@@ -1,5 +1,11 @@
+package Proof_of_concepts;
 import java.math.BigInteger;
 import java.util.Scanner;
+
+/*
+    Very basic code for checking prime numbers. 
+    It works and is easy to implement, but its runtime is absolutely terrible.
+ */
 
 public class PrimeCheckBasic {
 	public static void main(String[] args) {

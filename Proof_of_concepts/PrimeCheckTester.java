@@ -1,5 +1,23 @@
+package Proof_of_concepts;
 import java.math.BigInteger;
 import java.security.SecureRandom;
+
+
+/* This code is a stress test for Fermat's primality test.
+
+   The weakness of Fermat's primality test are special numbers called carmichael numbers. These numbers are non-primes, but 
+   due to certain mathematical properties, these numbers can make Fermat's primality test fail say they are primes. 
+
+   Let's take for example 561. This number is the smallest carmichael number that exists. When given to Fermat's Primality Test, 
+   there is a good chance that the test would say that it is a prime number even when it isn't.
+
+   Fortunately, there is a security parameter s, which can be increased to significantly lessen the chances of 
+   Fermat's primality test failing.
+
+   The purpose of this code is to test Fermat's primality test against the first 100 carmichael numbers. If you play around with 
+   This code, you will find that if s=1, then there will be multiple false positives. But, when s=100, false positives never 
+   happen anymore.
+ */
 
 public class PrimeCheckTester {
 	public static void main (String [] args) {
@@ -15,9 +33,13 @@ public class PrimeCheckTester {
 			BigInteger number = BigInteger.valueOf(carmichaels[j]);
 			boolean prime = false;
 			
-			float s = 150F;
+			float s = 150F;        
+            // s is what we call "security parameter".
+            // A higher value lessens the chances of the Fermality Primality test failing on a non-prime.
+
 			double start = System.nanoTime();
 			
+            // Fermat's Primality Test starts here:
 			for (int i = 1; i <= s; i++) {
 				if (number.compareTo(BigInteger.valueOf(4)) == 0) {
 					break;
