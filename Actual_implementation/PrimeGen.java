@@ -2,19 +2,25 @@ package Actual_implementation;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
-public class PrimeChecker {
-     
-    private BigInteger num;
-    private boolean prime;
+public class PrimeGen {
+    
+    private BigInteger prime;
+    private int prime_size;
+    private SecureRandom rand;
 
-    public PrimeChecker (BigInteger n){
-        num = n;
-        prime = checkIfPrime(num);
+    public PrimeGen(int size){
+        rand = new SecureRandom();
+        prime_size = size;
+        prime = generatePrime(rand, prime_size);
     }
 
-    
-    public boolean checkIfPrime(BigInteger number){
+    public PrimeGen(){
+        rand = new SecureRandom();
+        prime_size = 64;
+        prime = generatePrime(rand, prime_size);
+    }
 
+    public boolean primeCheck(BigInteger number){
         boolean prime = false;
 		float s = 150F;
     
@@ -45,13 +51,15 @@ public class PrimeChecker {
 		return prime;
     }
 
-
-    public BigInteger getNum(){
-        return num;
+    public BigInteger generatePrime(SecureRandom r, int numbits){
+        BigInteger bigRand = new BigInteger(numbits, r);
+        while (primeCheck(bigRand) != true) {
+			bigRand = bigRand.add(BigInteger.valueOf(1));
+		}
+        return bigRand;
     }
 
-
-    public boolean isPrime(){
+    public BigInteger getPrime(){
         return prime;
     }
 }
