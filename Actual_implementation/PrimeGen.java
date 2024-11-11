@@ -11,13 +11,11 @@ public class PrimeGen {
     public PrimeGen(int size){
         rand = new SecureRandom();
         prime_size = size;
-        prime = generatePrime(rand, prime_size);
     }
 
     public PrimeGen(){
         rand = new SecureRandom();
         prime_size = 64;
-        prime = generatePrime(rand, prime_size);
     }
 
     public boolean primeCheck(BigInteger number){
@@ -51,15 +49,11 @@ public class PrimeGen {
 		return prime;
     }
 
-    public BigInteger generatePrime(SecureRandom r, int numbits){
-        BigInteger bigRand = new BigInteger(numbits, r);
+    public BigInteger generatePrime(){
+        BigInteger bigRand = new BigInteger(prime_size, rand);
         while (primeCheck(bigRand) != true) {
 			bigRand = bigRand.add(BigInteger.valueOf(1));
 		}
         return bigRand;
-    }
-
-    public BigInteger getPrime(){
-        return prime;
     }
 }

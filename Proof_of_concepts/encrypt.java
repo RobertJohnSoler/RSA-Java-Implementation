@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class encrypt {
 	public static void main (String [] args) {
 		BigInteger n;
-		BigInteger d;
+		BigInteger e;
 		BigInteger x;
 		BigInteger y;
 		
@@ -18,11 +18,11 @@ public class encrypt {
 		System.out.print("Enter n: ");
 		n = input.nextBigInteger();
 		System.out.print("Enter e: ");
-		d = input.nextBigInteger();
+		e = input.nextBigInteger();
 		System.out.print("Enter plaintext: ");
 		x = input.nextBigInteger();
 		
-		y = x.modPow(d, n);
+		y = x.modPow(e, n);
 		System.out.println("Ciphertext is: " + y);
 		input.close();
 	}
