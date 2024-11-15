@@ -34,8 +34,8 @@ public class driver {
             input.close();
         }
         // String s = input.nextLine();
-        // System.out.println(RSA.StringToBinary(s));
+        // System.out.println(RSA.StringToHex(s));
         // String b = input.nextLine();
-        // System.out.println(RSA.BinaryToString(b));
+        // System.out.println(RSA.HexToString(b));
     }
 }

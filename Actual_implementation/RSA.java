@@ -78,6 +78,20 @@ public class RSA {
         return keys;
     }
 
+    private static String StringToHex(String s){
+        return String.format("%040x", new BigInteger(1, s.getBytes()));
+    }
+
+    private static String HexToString(String h){
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i <h.length(); i += 2) {
+            String hexPair = h.substring(i, i + 2);
+            int decimal = Integer.parseInt(hexPair, 16);
+            output.append((char) decimal);
+        }
+        return output.toString();
+    }
+
     public static String StringToBinary (String s){
         byte[] bytes = s.getBytes();
         StringBuilder binary = new StringBuilder();
@@ -109,15 +123,15 @@ public class RSA {
     }
 
     public static String RSAEncrypt (BigInteger N, BigInteger E, String plaintext){
-        BigInteger binary_plaintext = new BigInteger(StringToBinary(plaintext), 2);
-        BigInteger binary_ciphertext = binary_plaintext.modPow(E, N);
-        return binary_ciphertext.toString(2);
+        BigInteger hex_plaintext = new BigInteger(StringToHex(plaintext), 16);
+        BigInteger hex_ciphertext = hex_plaintext.modPow(E, N);
+        return hex_ciphertext.toString(16);
     }
 
     public static String RSADecrypt (BigInteger N, BigInteger D, String ciphertext){
-        BigInteger binary_ciphertext = new BigInteger(ciphertext, 2);
-        BigInteger binary_plaintext = binary_ciphertext.modPow(D, N);
-        return BinaryToString(binary_plaintext.toString(2));
+        BigInteger hex_ciphertext = new BigInteger(ciphertext, 16);
+        BigInteger hex_plaintext = hex_ciphertext.modPow(D, N);
+        return HexToString(hex_plaintext.toString(16));
     }
 
 }
