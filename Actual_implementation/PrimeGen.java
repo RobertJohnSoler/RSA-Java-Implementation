@@ -4,7 +4,6 @@ import java.security.SecureRandom;
 
 public class PrimeGen {
     
-    private BigInteger prime;
     private int prime_size;
     private SecureRandom rand;
 

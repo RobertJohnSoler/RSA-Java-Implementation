@@ -18,16 +18,17 @@ public class RSA {
         prime_generator = new PrimeGen(key_size);
     }
 
-    // Constructor that generates the keys for you
+    // Constructor that generates the keys for you given key size
     public RSA(int s) {
         key_size = s;
         prime_generator = new PrimeGen(key_size);
     }
 
-    // Constructor for when the user already has his own pivate key
-    public RSA(BigInteger n, BigInteger d){
+    // Constructor for when the user already has his own pivate and public keys
+    public RSA(BigInteger n, BigInteger d, BigInteger e){
         this.n = n;
         this.d = d;
+        this.e = e;
     }
 
     public void keyGen(){
