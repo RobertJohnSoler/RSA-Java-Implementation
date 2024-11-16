@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class decrypt {
 	public static void main (String [] args) {
+		
 		BigInteger n;
 		BigInteger d;
 		BigInteger x;
