@@ -8,7 +8,7 @@ public class RSA {
     
     private int key_size;
     private BigInteger n;
-    private BigInteger e;
+     BigInteger e;
     private BigInteger d;
     private PrimeGen prime_generator;
 
