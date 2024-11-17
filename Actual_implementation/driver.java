@@ -31,12 +31,12 @@ public class driver {
 
                 System.out.print("Input plaintext: ");
                 String plaintext1 = input.nextLine();
-                String ciphertext1 = RSA.RSAEncrypt(n, e, plaintext1);
+                String ciphertext1 = rsa.RSAEncrypt(n, e, plaintext1);
                 System.out.println("Ciphertext is: " + ciphertext1);
 
                 System.out.print("Input ciphertext: ");
                 String ciphertext2 = input.nextLine();
-                String plaintext2 = RSA.RSADecrypt(n, d, ciphertext2);
+                String plaintext2 = rsa.RSADecrypt(ciphertext2);
                 System.out.println("Plaintext is: " + plaintext2);
 
             }     
@@ -59,12 +59,12 @@ public class driver {
 
                 System.out.print("Input plaintext: ");
                 String plaintext1 = input.nextLine();
-                String ciphertext1 = RSA.RSAEncrypt(n, e, plaintext1);
+                String ciphertext1 = rsa.RSAEncrypt(n, e, plaintext1);
                 System.out.println("Ciphertext is: " + ciphertext1);
 
                 System.out.print("Input ciphertext: ");
                 String ciphertext2 = input.nextLine();
-                String plaintext2 = RSA.RSADecrypt(n, d, ciphertext2);
+                String plaintext2 = rsa.RSADecrypt(ciphertext2);
                 System.out.println("Plaintext is: " + plaintext2);
 
             }  

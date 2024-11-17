@@ -123,15 +123,15 @@ public class RSA {
         return string;
     }
 
-    public static String RSAEncrypt (BigInteger N, BigInteger E, String plaintext){
+    public String RSAEncrypt (BigInteger N, BigInteger E, String plaintext){
         BigInteger hex_plaintext = new BigInteger(StringToHex(plaintext), 16);
         BigInteger hex_ciphertext = hex_plaintext.modPow(E, N);
         return hex_ciphertext.toString(16);
     }
 
-    public static String RSADecrypt (BigInteger N, BigInteger D, String ciphertext){
+    public String RSADecrypt (String ciphertext){
         BigInteger hex_ciphertext = new BigInteger(ciphertext, 16);
-        BigInteger hex_plaintext = hex_ciphertext.modPow(D, N);
+        BigInteger hex_plaintext = hex_ciphertext.modPow(d, n);
         return HexToString(hex_plaintext.toString(16));
     }
 
