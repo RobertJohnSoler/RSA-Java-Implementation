@@ -29,6 +29,7 @@ public class driver {
 
             while (true) {
 
+                System.out.println("");
                 System.out.print("Input plaintext: ");
                 String plaintext1 = input.nextLine();
                 String ciphertext1 = rsa.RSAEncrypt(n, e, plaintext1);

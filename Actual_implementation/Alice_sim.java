@@ -12,6 +12,7 @@ public class Alice_sim {
         String ciphertext;
 
         while (true) {
+            System.out.println("");
             System.out.println("You are Alice. What do you want to do?");
             System.out.println("[1] Generate keys");
             System.out.println("[2] Send an encrypted message");
